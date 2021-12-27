@@ -1,0 +1,36 @@
+﻿@page
+@model AddressBookWebApp.Pages.AddressBooks.DeleteModel
+
+<form method="post">
+    <input type="hidden" asp-for="AddressBook.Id" />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-light pl-3">Delete Contact</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="AddressBook.Name"></label>
+            <input disabled asp-for="AddressBook.Name" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="AddressBook.Address"></label>
+            <input disabled asp-for="AddressBook.Address" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="AddressBook.PhoneNumber"></label>
+            <input disabled asp-for="AddressBook.PhoneNumber" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="AddressBook.EmailAddress"></label>
+            <input disabled asp-for="AddressBook.EmailAddress" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
+        <a asp-page="/AddressBooks/Index" class="btn btn-secondary" style="width:150px">Cancel</a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}

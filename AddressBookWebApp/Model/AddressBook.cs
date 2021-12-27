@@ -16,7 +16,7 @@ namespace AddressBookWebApp.Model
         [Required, Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
-        [Required, Display(Name = "Email Address")]
+        [Required, EmailAddress, Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
     }
 }

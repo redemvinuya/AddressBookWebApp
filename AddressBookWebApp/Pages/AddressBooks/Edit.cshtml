@@ -1,0 +1,41 @@
+﻿@page
+@model AddressBookWebApp.Pages.AddressBooks.EditModel
+
+<form method="post">
+    <input type="hidden" asp-for="AddressBook.Id" />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-light pl-3">Edit Contact</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="AddressBook.Name"></label>
+            <input asp-for="AddressBook.Name" class="form-control" />
+            <span asp-validation-for="AddressBook.Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AddressBook.Address"></label>
+            <input asp-for="AddressBook.Address" class="form-control" />
+            <span asp-validation-for="AddressBook.Address" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AddressBook.PhoneNumber"></label>
+            <input asp-for="AddressBook.PhoneNumber" class="form-control" />
+            <span asp-validation-for="AddressBook.PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AddressBook.EmailAddress"></label>
+            <input asp-for="AddressBook.EmailAddress" class="form-control"/>
+            <span asp-validation-for="AddressBook.EmailAddress" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+        <a asp-page="/AddressBooks/Index" class="btn btn-secondary" style="width:150px">Cancel</a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
