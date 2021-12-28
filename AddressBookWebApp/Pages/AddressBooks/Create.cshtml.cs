@@ -1,10 +1,12 @@
 using AddressBookWebApp.Data;
 using AddressBookWebApp.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AddressBookWebApp.Pages.AddressBooks
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly ApplicationDbContext _db;

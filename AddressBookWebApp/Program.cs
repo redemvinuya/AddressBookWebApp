@@ -15,6 +15,11 @@ builder.Services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(
     ));
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
 
+builder.Services.ConfigureApplicationCookie(config =>
+{
+    config.LoginPath = "/Login";
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
